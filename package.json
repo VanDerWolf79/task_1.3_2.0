@@ -1,0 +1,21 @@
+{
+  "name": "My-portfolio",
+  "version": "1.0.0",
+  "description": "My personal portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "author": "Ben",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.0.0",               
+    "vue-router": "^4.0.0"         
+  },
+  "devDependencies": {
+    "@vue/cli": "^4.5.0"           
+  }
+}
+
