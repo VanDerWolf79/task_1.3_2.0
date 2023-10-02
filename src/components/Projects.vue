@@ -1,27 +1,29 @@
 <template>
-  <div class="container">
-    <h1>Projects</h1>
-    <div class="project-list">
-      <div class="project-item">
-        <img src="@/icons/project1.jpg" alt="Project 1" />
-        <h2>Project 1</h2>
-        <p>Description of Project 1.</p>
-      </div>
-      <div class="project-item">
-        <img src="@/icons/project2.jpg" alt="Project 2" />
-        <h2>Project 2</h2>
-        <p>Description of Project 2.</p>
-      </div>
-      <!-- Add more project items as needed -->
+  <div class="project-list">
+    <div class="project-item" v-for="project in projects" :key="project.id">
+      <img :src="project.image" alt="Project" />
+      <h2>{{ project.title }}</h2>
+      <p v-if="project.showDetails">{{ project.description }}</p>
+      <button @click="toggleDetails(project)">Toggle Details</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Projects",
+  data() {
+    return {
+      projects: [
+        { id: 1, title: "Project 1", description: "Description 1", showDetails: false },
+        { id: 2, title: "Project 2", description: "Description 2", showDetails: false },
+        // Add more project items
+      ],
+    };
+  },
+  methods: {
+    toggleDetails(project) {
+      project.showDetails = !project.showDetails;
+    },
+  },
 };
 </script>
-
-<style scoped>
-</style>
